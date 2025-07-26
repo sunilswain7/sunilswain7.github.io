@@ -2,6 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Optional extras */
 body {
-  @apply bg-combatBg text-white font-techno;
+  @apply bg-military text-white font-body;
+}
+
+.radar-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle, rgba(0, 255, 127, 0.2) 1px, transparent 1px),
+    repeating-linear-gradient(#00ff7f1a 0 1px, transparent 1px 20px),
+    repeating-linear-gradient(90deg, #00ff7f1a 0 1px, transparent 1px 20px);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Optional radar sweep animation */
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(0, 255, 127, 0.15),
+    transparent 40%
+  );
+  animation: radarSweep 5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }

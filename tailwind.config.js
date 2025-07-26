@@ -1,18 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        combatBg: "#0B0F14",  // deep combat room black
-        hudGreen: "#00FF9F",
-        radarBlue: "#00CFFF",
-        panelGray: "#1E252D",
+        military: "#1b2a30",
+        radarGreen: "#00ff7f",
+        cockpitBlue: "#00e5ff",
+        targetRed: "#ff3d3d",
       },
       fontFamily: {
-        techno: ["'Share Tech Mono'", "monospace"],
+        heading: ["Orbitron", "sans-serif"],
+        body: ["Rajdhani", "sans-serif"],
       },
     },
   },
   plugins: [],
-};
+}
